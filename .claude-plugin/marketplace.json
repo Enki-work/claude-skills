@@ -1,0 +1,12 @@
+{
+  "name": "claude-skills",
+  "owner": "Enki-work",
+  "description": "A curated marketplace of Claude Code skills — PR automation, git workflows, and more",
+  "plugins": [
+    {
+      "name": "bot-reply",
+      "description": "Auto-respond to PR bot comments (coderabbitai / copilot / chatgpt-codex-connector) with fixes or explanations",
+      "source": "./plugins/bot-reply"
+    }
+  ]
+}

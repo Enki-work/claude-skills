@@ -1,55 +1,59 @@
 # Claude Skills Marketplace
 
-A curated collection of [Claude Code](https://claude.ai/claude-code) slash command skills — install powerful `/commands` into your local workflow in seconds.
+A curated marketplace of [Claude Code](https://claude.ai/claude-code) skills — install powerful slash commands via the native plugin system.
 
-## Quick Start
+## Install via Claude Code Plugin System
 
-### Step 1 — Install the `/plugin` command (one-time)
+### Step 1 — Register this marketplace
 
 ```bash
-curl -o ~/.claude/commands/plugin.md \
-  https://raw.githubusercontent.com/Enki-work/claude-skills/main/plugin-command.md
+claude plugin marketplace add Enki-work/claude-skills
 ```
 
-### Step 2 — Browse the marketplace
+### Step 2 — Browse available skills
 
 ```
-/plugin list
+/plugin marketplace list
 ```
 
-### Step 3 — Install any skill
+### Step 3 — Install a skill
+
+```bash
+claude plugin install bot-reply@claude-skills
+```
+
+Or interactively in Claude Code:
 
 ```
-/plugin install bot-reply
+/plugin install bot-reply@claude-skills
 ```
 
 ---
 
 ## Available Skills
 
-| Name | Category | Description |
-|------|----------|-------------|
-| [bot-reply](./skills/bot-reply/) | git | Auto-respond to PR bot comments (coderabbitai / copilot / chatgpt-codex-connector) with fixes or explanations |
+| Name | Description |
+|------|-------------|
+| [bot-reply](./plugins/bot-reply/) | Auto-respond to PR bot comments (coderabbitai / copilot / chatgpt-codex-connector) |
 
 ---
 
-## Manual Install (without /plugin)
+## Manual Install (without plugin system)
 
 ```bash
-# bot-reply
 curl -o ~/.claude/commands/bot-reply.md \
-  https://raw.githubusercontent.com/Enki-work/claude-skills/main/skills/bot-reply/command.md
+  https://raw.githubusercontent.com/Enki-work/claude-skills/main/plugins/bot-reply/commands/bot-reply.md
 ```
 
 ## Requirements
 
-- [Claude Code](https://claude.ai/claude-code) CLI installed
+- [Claude Code](https://claude.ai/claude-code) CLI
 - GitHub CLI (`gh`) for skills that interact with GitHub
-- MCP GitHub plugin (optional, used as primary method when available)
+- MCP GitHub plugin (optional, recommended)
 
 ## Contributing
 
-Want to add your own skill? See [CONTRIBUTING.md](./CONTRIBUTING.md).
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 

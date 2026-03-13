@@ -1,0 +1,10 @@
+[
+  {
+    "name": "bot-reply",
+    "description": "Auto-respond to PR bot comments (coderabbitai / copilot / chatgpt-codex-connector) with fixes or explanations",
+    "category": "git",
+    "author": "Enki-work",
+    "command_url": "https://raw.githubusercontent.com/Enki-work/claude-skills/main/skills/bot-reply/command.md",
+    "readme_url": "https://github.com/Enki-work/claude-skills/tree/main/skills/bot-reply"
+  }
+]

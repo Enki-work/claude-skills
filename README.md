@@ -2,26 +2,43 @@
 
 A curated collection of [Claude Code](https://claude.ai/claude-code) slash command skills — install powerful `/commands` into your local workflow in seconds.
 
-## Available Skills
+## Quick Start
 
-| Skill | Description | Category |
-|-------|-------------|----------|
-| [bot-reply](./skills/bot-reply/) | Auto-respond to PR bot comments (coderabbitai / copilot / chatgpt-codex-connector) with fixes or explanations | Git / PR |
-
-## How to Install a Skill
-
-Each skill is a single Markdown file. Copy it to your `~/.claude/commands/` directory:
+### Step 1 — Install the `/plugin` command (one-time)
 
 ```bash
-# Example: install bot-reply
+curl -o ~/.claude/commands/plugin.md \
+  https://raw.githubusercontent.com/Enki-work/claude-skills/main/plugin-command.md
+```
+
+### Step 2 — Browse the marketplace
+
+```
+/plugin list
+```
+
+### Step 3 — Install any skill
+
+```
+/plugin install bot-reply
+```
+
+---
+
+## Available Skills
+
+| Name | Category | Description |
+|------|----------|-------------|
+| [bot-reply](./skills/bot-reply/) | git | Auto-respond to PR bot comments (coderabbitai / copilot / chatgpt-codex-connector) with fixes or explanations |
+
+---
+
+## Manual Install (without /plugin)
+
+```bash
+# bot-reply
 curl -o ~/.claude/commands/bot-reply.md \
   https://raw.githubusercontent.com/Enki-work/claude-skills/main/skills/bot-reply/command.md
-```
-
-Then use it in Claude Code:
-
-```
-/bot-reply https://github.com/org/repo/pull/123
 ```
 
 ## Requirements

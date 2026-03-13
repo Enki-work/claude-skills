@@ -12,6 +12,23 @@ allowed-tools: Read, Edit, Glob, Grep, mcp__plugin_github_github__pull_request_r
 
 ## 処理フロー
 
+### 0. PR URLの解決
+
+引数（$ARGUMENTS）が指定されている場合はそのURLをPR_URLとして使用する。
+
+引数が空の場合は、以下の順で現在のブランチのPRを自動検出する:
+
+1. **MCP優先:** `mcp__plugin_github_github__list_pull_requests` でカレントブランチ名に一致するPRを検索する
+2. **フォールバック:** 以下のコマンドで検出する
+   ```bash
+   gh pr list --head "$(git branch --show-current)" --json url,number,title
+   ```
+3. 検出できた場合はそのURLをPR_URLとして使用する
+4. 検出できなかった場合のみ、ユーザーに尋ねる:
+   ```
+   PR URLが指定されていません。対応するPRのURLを教えてください。
+   ```
+
 ### 1. 実行前確認
 
 ```
